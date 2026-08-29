@@ -21,8 +21,9 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0;
+  gap: -10px;
 }
 
 .milo-talking {
@@ -37,8 +38,7 @@ h1 {
 }
 
 .milo-talking:hover {
-    width: 450px;
-    height: 450px;
+  scale: 1.05;
 }
 
 @keyframes talk {
@@ -61,7 +61,8 @@ h1 {
     background-repeat: no-repeat;
     background-position: center;
     image-rendering: pixelated;
-    animation: cycleBubbles 20s infinite; /* 4 images * 5 seconds each = 20s total loop */
+    animation: cycleBubbles 20s infinite;
+    margin-bottom: -10px;
 }
 
 @keyframes cycleBubbles {
