@@ -21,6 +21,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 0;
 }
 
 .milo-talking {
@@ -48,25 +50,200 @@ h1 {
     }
 }
 
-/*milo speech bubbles*/
+/*speech bubbles*/
 .speech-bubble {
-    position: absolute;
-    top: -110px;
-    width: 170px;
-    height: auto;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    pointer-events: none;
-}
-
-.speech-bubble.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.speech-bubble img {
-    width: 100%;
-    height: auto;
+    top: -120px;
+    right: -30px;
+    width: 540px;
+    height: 300px;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     image-rendering: pixelated;
+    animation: cycleBubbles 20s infinite; /* 4 images * 5 seconds each = 20s total loop */
+}
+
+@keyframes cycleBubbles {
+  /* --- 1. Pizza (0s - 5s) --- */
+  0% {
+    background-image: url('images/Pizza.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    background-image: url('images/Pizza.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  24% {
+    background-image: url('images/Pizza.PNG');
+    opacity: 0;
+    transform: scale(0.85); /* Disappears/pops out */
+  }
+
+  /* --- 2. Water (5s - 10s) --- */
+  25% {
+    background-image: url('images/Water.PNG');
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  26% {
+    background-image: url('images/Water.PNG');
+    opacity: 1;
+    transform: scale(1); /* Pops in */
+  }
+  45% {
+    background-image: url('images/Water.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  49% {
+    background-image: url('images/Water.PNG');
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  /* --- 3. Petting (10s - 15s) --- */
+  50% {
+    background-image: url('images/Petting.PNG');
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  51% {
+    background-image: url('images/Petting.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    background-image: url('images/Petting.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  74% {
+    background-image: url('images/Petting.PNG');
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  /* --- 4. Ur mom (15s - 20s) --- */
+  75% {
+    background-image: url('images/Ur mom.PNG');
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  76% {
+    background-image: url('images/Ur mom.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  95% {
+    background-image: url('images/Ur mom.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  99%, 100% {
+    background-image: url('images/Ur mom.PNG');
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+/*health bar*/
+.health-bar {
+    top: -120px;
+    right: -30px;
+    width: 540px;
+    height: 300px;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    animation: healthbar 20s infinite; /* 4 images * 5 seconds each = 20s total loop */
+}
+
+@keyframes healthbar {
+  /* --- 1. Pizza (0s - 5s) --- */
+  0% {
+    background-image: url('health/1xp.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    background-image: url('health/1xp.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  24% {
+    background-image: url('health/1xp.PNG');
+    opacity: 0;
+    transform: scale(1); /* Disappears/pops out */
+  }
+
+  /* --- 2. Water (5s - 10s) --- */
+  25% {
+    background-image: url('health/2xp.PNG');
+    opacity: 0;
+    transform: scale(1);
+  }
+  26% {
+    background-image: url('health/2xp.PNG');
+    opacity: 1;
+    transform: scale(1); /* Pops in */
+  }
+  45% {
+    background-image: url('health/2xp.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  49% {
+    background-image: url('health/2xp.PNG');
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  /* --- 3. Petting (10s - 15s) --- */
+  50% {
+    background-image: url('health/3xp.PNG');
+    opacity: 0;
+    transform: scale(1);
+  }
+  51% {
+    background-image: url('health/2xp.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    background-image: url('health/2xp.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  74% {
+    background-image: url('health/2xp.PNG');
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  /* --- 4. Ur mom (15s - 20s) --- */
+  75% {
+    background-image: url('health/3xp.PNG');
+    opacity: 0;
+    transform: scale(1);
+  }
+  76% {
+    background-image: url('health/3xp.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  95% {
+    background-image: url('health/3xp.PNG');
+    opacity: 1;
+    transform: scale(1);
+  }
+  99%, 100% {
+    background-image: url('health/3xp.PNG');
+    opacity: 0;
+    transform: scale(1);
+  }
 }
