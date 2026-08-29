@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(background.png);
+    background-image: url(images/BlurredBg.PNG);
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
@@ -11,5 +11,31 @@ body {
 h1 {
     font-family: 'Pixelify Sans', sans-serif;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.milo-talking {
+    width: 400px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    image-rendering: pixelated;
+    animation: talk 0.3s steps(1) infinite;
+    position: center;
+}
+
+@keyframes talk {
+    0%, 100% {
+        background-image: url('images/Milo closed mouth.PNG');
+    }
+     50% {
+        background-image: url('images/Milo open mouth.PNG');
+    }
 }
