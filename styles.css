@@ -6,6 +6,7 @@ body {
     background-position: center;
     background-repeat: repeat;
     padding: 20px;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -13,6 +14,8 @@ h1 {
     text-align: center;
     font-size: 4rem;
 }
+
+/* milo speach */
 
 .game {
   display: flex;
@@ -31,6 +34,11 @@ h1 {
     position: center;
 }
 
+.milo-talking:hover {
+    width: 450px;
+    height: 450px;
+}
+
 @keyframes talk {
     0%, 100% {
         background-image: url('images/Milo closed mouth.PNG');
@@ -38,4 +46,27 @@ h1 {
      50% {
         background-image: url('images/Milo open mouth.PNG');
     }
+}
+
+/*milo speech bubbles*/
+.speech-bubble {
+    position: absolute;
+    top: -110px;
+    width: 170px;
+    height: auto;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.speech-bubble.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.speech-bubble img {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
 }
